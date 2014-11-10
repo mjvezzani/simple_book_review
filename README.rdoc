@@ -1,0 +1,14 @@
+== Simple Book Review App
+
+Models
+*Book
+*Author
+*Review
+
+Associations
+book belongs_to :author
+book has_many :reviews
+
+author has_many :books
+
+review belongs_to :book
