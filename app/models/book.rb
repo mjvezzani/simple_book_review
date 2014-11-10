@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   validates :author, presence: true
   
   def title_and_author
-    "#{self.title}: by #{self.author.first_name} #{self.author.last_name}"
+    "#{self.title}: by #{self.author.full_name}"
   end
 
 end
