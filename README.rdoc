@@ -7,6 +7,7 @@ Models
 
 Associations
 book belongs_to :author
+book belongs_to :user
 book has_many :reviews
 
 author has_many :books
