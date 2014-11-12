@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'books#index'
+  get 'books/search' => 'books#search'
   resources :books
 
   # The priority is based upon order of creation: first created -> highest priority.

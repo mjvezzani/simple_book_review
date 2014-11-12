@@ -9,4 +9,8 @@ class Book < ActiveRecord::Base
     "#{self.title}: by #{self.author.full_name}"
   end
 
+  def self.search(search)
+    where("title like ?", "%#{search}%")
+  end
+
 end
