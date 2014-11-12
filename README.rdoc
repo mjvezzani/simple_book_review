@@ -6,10 +6,11 @@ Models
 *Review
 
 Associations
-book belongs_to :author
-book belongs_to :user
+book belongs_to :author, :author_id
+book belongs_to :user, :user_id
 book has_many :reviews
 
 author has_many :books
 
-review belongs_to :book
+review belongs_to :book, :book_id
+review belongs_to :user, :user_id
