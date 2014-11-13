@@ -1,12 +1,15 @@
 <h1>Here are the books</h1>
+<div class='pull-right'>
+  <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
 <hr/>
 
 <% @books.each do |book| %>
   <h3><%= link_to book.title, book_path(book) %></h3>
-  <p><%= book.author.full_name %></p>
+  <p><%= link_to book.author.full_name, author_path(book.author) %></p>
 <% end %>
 
-<%= form_tag(books_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
+

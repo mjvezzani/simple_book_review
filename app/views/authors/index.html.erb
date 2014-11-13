@@ -1,0 +1,7 @@
+<h1>Here are the authors!</h1>
+<hr/>
+
+<% @authors.each do |author| %>
+  <p><%= link_to author.full_name, author_path(author) %></p>
+  <p>Number of books reviewed:<%= author.books.count %></p>
+<% end %>
